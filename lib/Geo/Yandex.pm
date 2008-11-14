@@ -1,7 +1,7 @@
 package Geo::Yandex;
 
 use vars qw ($VERSION);
-$VERSION = '0.2';
+$VERSION = '0.3';
 
 my $API = 'geocode-maps.yandex.ru/1.x';
 
@@ -58,7 +58,7 @@ sub location {
     }
     else {
         $this->{'error'} = "HTTP request error: " . $response->status_line . "\n";
-        return undef;
+        return ();
     }    
 }
 

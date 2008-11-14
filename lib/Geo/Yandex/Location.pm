@@ -1,7 +1,7 @@
 package Geo::Yandex::Location;
 
 use vars qw ($VERSION);
-$VERSION = '0.2';
+$VERSION = '0.3';
 
 use strict;
 use utf8;
