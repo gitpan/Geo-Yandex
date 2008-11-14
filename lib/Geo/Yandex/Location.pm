@@ -1,7 +1,7 @@
 package Geo::Yandex::Location;
 
 use vars qw ($VERSION);
-$VERSION = '0.1';
+$VERSION = '0.2';
 
 use strict;
 use utf8;
@@ -127,8 +127,8 @@ Geo::Yandex::Location - Presents location data produced by Yandex Maps API
     my @locations = $geo->location(address => $addr);
     
     for my $item (@locations) {
-        printf "%s\n", $item->address;
-        printf "\t%s, %s (%s)\n", $item->latitude, $item->longitude, $item->kind;
+        say $item->address . ' (' . $item->kind .') ' .
+            $item->latitude . ',' . $item->longitude;
     }
 
     
@@ -138,7 +138,7 @@ Geo::Yandex::Location is an object which may be returned by C<Geo::Yandex::locat
 
 =head1 DESCRIPTION
 
-Normally you should not create Geo::Yandex::Location objects yourself. These objects are intended to be read-only, and are created during geographical query initiated by calling C<location> method of C<Geo::Yandex> instance. All the methods listed below return either a scalar with text or numeric data, or undef in case those pieces of information cannot be applied to the location. Particular fields are formed according to GML specification (http://www.opengis.net/gml/).
+Normally you do not create Geo::Yandex::Location objects yourself. These objects are intended to be read-only, and are created during geographical query initiated by calling C<location> method of C<Geo::Yandex> instance. All the methods listed below return either a scalar with text or numeric data, or undef in case those pieces of information cannot be applied to the location. Particular fields are formed according to GML specification (http://www.opengis.net/gml/).
 
 =head2 kind
     
